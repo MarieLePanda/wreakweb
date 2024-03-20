@@ -23,7 +23,7 @@ class Program
         LoggerMiddleware loggerMiddleware = new LoggerMiddleware(routingMiddleware.InvokeAsync);
         Func<HTTPContext, Task> pipeline = loggerMiddleware.InvokeAsync;
 
-        connectionManager.StartAsync(System.Net.IPAddress.Any, 4221, pipeline);
+        connectionManager.StartAsync(System.Net.IPAddress.Any, 8080, pipeline);
 
 
         while (true)
